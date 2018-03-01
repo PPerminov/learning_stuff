@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tests!!!</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+<script>
+  function data(type) {
+    $.get("test.php", {
+      task: type
+    }, function(data1) {
+      $(".col-md-8").html(data1);
+    });
+  };
+
+
+  function show_result(type) {
+    $.get("test.php", {
+      task: type
+    }, function(data2) {
+      $(".col-md-8").html(data2);
+    });
+  };
+</script>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <input id="task1" value="(№1)" onclick="data('task1')" type="button">
+        <input id="task2" value="(№2)" onclick="data('task2')" type="button">
+        <input id="task3" value="(№3,4,5)" onclick="data('task3')" type="button">
+        <input id="task6" value="(№6)" onclick="data('task6')" type="button">
+        <input id="task7" value="(№7)" onclick="data('task7')" type="button">
+      </div>
+      <div class="col-md-8"></div>
+    </div>
+  </div>
+</body>
+
+</html>

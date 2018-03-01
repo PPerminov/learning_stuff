@@ -1,0 +1,27 @@
+{
+  "name": "erastofen",
+  "version": "0.0.1",
+  "description": "Find prime numbers",
+  "main": "init.js",
+  "scripts": {
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "test": "echo \"Error: no-no-no test specified\" && exit 1",
+    "babel-node": "babel-node",
+    "eslint": "eslint"
+  },
+  "author": "Pavel Perminov",
+  "license": "GPLv3",
+  "homepage": "https://github.com/PPerminov/project-lvl1-s98#readme",
+  "devDependencies": "babel-cli babel-core babel-preset-env babel-preset-stage-0 eslint eslint-config-airbnb-base eslint-plugin-import babel-eslint",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "readline-sync": "*"
+  }
+}

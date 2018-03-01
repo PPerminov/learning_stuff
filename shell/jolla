@@ -1,0 +1,40 @@
+#!/bin/bash
+$MAC="00:00:00:00:00:00"
+ip=$(arp | grep $MAC | awk '{print $1}')
+
+#echo $ip
+
+function to {
+  if [[ -z $2 ]]
+  then
+    path='Music/'
+  else
+    path=$2
+  fi
+  command='scp -r ${@} '"nemo@$ip:/home/nemo/$path"
+  realpath "$1" | xargs -d'\n' sh -c "$command" "${0}"
+}
+
+function from {    #not completed
+  if [[ -z $2 ]]
+  then
+    path='./'
+  else
+    path=$2
+  fi
+	command="scp -r nemo@$ip:/home/nemo/$path"
+  realpath "$1" | xargs -d'\n' sh -c "$command" "${0}"
+}
+
+if [[ "$1" == "to" ]]
+then
+	to $2 $3
+elif [[ "$1" == "from" ]]
+then
+	echo There will be function from #$2 $3
+elif [[ "$1" == "ssh" ]]
+then
+	ssh nemo@$ip
+else
+	echo Bad arguments
+fi
