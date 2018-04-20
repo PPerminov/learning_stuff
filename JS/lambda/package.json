@@ -1,0 +1,20 @@
+{
+  "name": "lambda",
+  "version": "0.0.1",
+  "description": "functional programming",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "test": "echo \"Error: no-no-no test specified\" && exit 1",
+    "babel-node": "babel-node",
+    "eslint": "eslint",
+    "prepublish": "npm run build"
+  },
+  "author": "Pavel Perminov",
+  "license": "GPLv3",
+  "devDependencies": "babel-cli babel-core babel-preset-env babel-preset-stage-0 eslint eslint-config-airbnb-base eslint-plugin-import babel-eslint",
+  "dependencies": {
+    "eslint-plugin-import": "^2.7.0",
+    "readline-sync": "*"
+  }
+}
