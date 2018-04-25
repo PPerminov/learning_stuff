@@ -1,0 +1,20 @@
+#!/bin/bash
+
+user=$1
+server=$2
+port=$3
+status=1
+
+while [[ $status -ne 0 ]]
+do
+  ping -W 1 -c 1 $server
+  status=$?
+done 
+
+if [[ -z $port ]]
+then
+  port=22
+fi
+
+ssh -p $port $user@$server
+
