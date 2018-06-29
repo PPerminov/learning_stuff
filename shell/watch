@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+while : 
+do
+  clear
+  date
+  echo ______________________________________
+  bash -c $1
+  if [[ -z $2 ]]
+  then 
+    sleep 2
+  else
+    sleep $2
+  fi
+done
